@@ -20,6 +20,20 @@ import calendarWidget400 from '../assets/Project Overview/CalendarWidget-400.web
 import calendarWidget800 from '../assets/Project Overview/CalendarWidget-800.webp'
 import calendarWidget1200 from '../assets/Project Overview/CalendarWidget-1200.webp'
 
+import wtoolz400 from '../assets/Project Overview/WebToolz-400.webp'
+import wtoolz800 from '../assets/Project Overview/WebToolz-800.webp'
+import wtoolz1200 from '../assets/Project Overview/WebToolz-1200.webp'
+import wtoolz400avif from '../assets/Project Overview/WebToolz-400.avif'
+import wtoolz800avif from '../assets/Project Overview/WebToolz-800.avif'
+import wtoolz1200avif from '../assets/Project Overview/WebToolz-1200.avif'
+
+import MyPC400 from '../assets/Project Overview/MyPC-400.webp'
+import MyPC800 from '../assets/Project Overview/MyPC-800.webp'
+import MyPC1200 from '../assets/Project Overview/MyPC-1200.webp'
+import MyPC400avif from '../assets/Project Overview/MyPC-400.avif'
+import MyPC800avif from '../assets/Project Overview/MyPC-800.avif'
+import MyPC1200avif from '../assets/Project Overview/MyPC-1200.avif'
+
 import InfiniteListWithDetail from '../JS/InfiniteListWithDetail'
 
 function smoothScrollToId(id, duration = 600) {
@@ -90,14 +104,16 @@ function ProjectsSection() {
             description: 'MyPC is a web-based e-commerce platform developed for the Information Assurance and Security course. This emulates a real-world online store where users can browse, select, and purchase computer components and accessories.',
             tags: ['HTML5','CSS3','JavaScript','PHP', 'XAMPP', 'MySQL'],
             repoUrl: 'https://github.com/kidlatpogi/InfoSec-MyPC.git',
-            images: { avif400: calendarWidget400avif, avif800: calendarWidget800avif, avif1200: calendarWidget1200avif, webp400: calendarWidget400, webp800: calendarWidget800, webp1200: calendarWidget1200 }
+            visitUrl: 'https://mypcinfosec.vercel.app',
+            images: { avif400: MyPC400avif, avif800: MyPC800avif, avif1200: MyPC1200avif, webp400: MyPC400, webp800: MyPC800, webp1200: MyPC1200 }
           },
           {
             title: 'Web Tools',
             description: 'A collection of web-based utilities including A.I., Designs and Visuals, Core Development Tools etc... That aims to provide users what they need in Web Development in one place.',
             tags: ['React JS','JavaScript','CSS3','HTML5'],
             repoUrl: 'https://github.com/kidlatpogi/Web-tools.git',
-            images: { avif400: calendarWidget400avif, avif800: calendarWidget800avif, avif1200: calendarWidget1200avif, webp400: calendarWidget400, webp800: calendarWidget800, webp1200: calendarWidget1200 }
+            visitUrl: 'https://wtoolz.vercel.app/',
+            images: { avif400: wtoolz400avif, avif800: wtoolz800avif, avif1200: wtoolz1200avif, webp400: wtoolz400, webp800: wtoolz800, webp1200: wtoolz1200 }
           },
         ]} />
 
