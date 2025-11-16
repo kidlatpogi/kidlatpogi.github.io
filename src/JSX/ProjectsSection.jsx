@@ -1,10 +1,10 @@
 import React from 'react'
-import roomReservation400avif from '../assets/Photoshop/RoomReservationSystem-400.avif'
-import roomReservation800avif from '../assets/Photoshop/RoomReservationSystem-800.avif'
-import roomReservation1200avif from '../assets/Photoshop/RoomReservationSystem-1200.avif'
-import roomReservation400 from '../assets/Photoshop/RoomReservationSystem-400.webp'
-import roomReservation800 from '../assets/Photoshop/RoomReservationSystem-800.webp'
-import roomReservation1200 from '../assets/Photoshop/RoomReservationSystem-1200.webp'
+import roomReservation400avif from '../assets/Project Overview/RoomReservationSystem-400.avif'
+import roomReservation800avif from '../assets/Project Overview/RoomReservationSystem-800.avif'
+import roomReservation1200avif from '../assets/Project Overview/RoomReservationSystem-1200.avif'
+import roomReservation400 from '../assets/Project Overview/RoomReservationSystem-400.webp'
+import roomReservation800 from '../assets/Project Overview/RoomReservationSystem-800.webp'
+import roomReservation1200 from '../assets/Project Overview/RoomReservationSystem-1200.webp'
 
 import safeLink400avif from '../assets/Project Overview/SafeLink-400.avif'
 import safeLink800avif from '../assets/Project Overview/SafeLink-800.avif'
@@ -84,7 +84,21 @@ function ProjectsSection() {
             repoUrl: 'https://github.com/kidlatpogi/Calendar-Widget',
             downloadUrl: 'https://github.com/kidlatpogi/Calendar-Widget/releases/latest',
             images: { avif400: calendarWidget400avif, avif800: calendarWidget800avif, avif1200: calendarWidget1200avif, webp400: calendarWidget400, webp800: calendarWidget800, webp1200: calendarWidget1200 }
-          }
+          },
+          {
+            title: 'MyPC E-Commerce Shop',
+            description: 'MyPC is a web-based e-commerce platform developed for the Information Assurance and Security course. This emulates a real-world online store where users can browse, select, and purchase computer components and accessories.',
+            tags: ['HTML5','CSS3','JavaScript','PHP', 'XAMPP', 'MySQL'],
+            repoUrl: 'https://github.com/kidlatpogi/InfoSec-MyPC.git',
+            images: { avif400: calendarWidget400avif, avif800: calendarWidget800avif, avif1200: calendarWidget1200avif, webp400: calendarWidget400, webp800: calendarWidget800, webp1200: calendarWidget1200 }
+          },
+          {
+            title: 'Web Tools',
+            description: 'A collection of web-based utilities including A.I., Designs and Visuals, Core Development Tools etc... That aims to provide users what they need in Web Development in one place.',
+            tags: ['React JS','JavaScript','CSS3','HTML5'],
+            repoUrl: 'https://github.com/kidlatpogi/Web-tools.git',
+            images: { avif400: calendarWidget400avif, avif800: calendarWidget800avif, avif1200: calendarWidget1200avif, webp400: calendarWidget400, webp800: calendarWidget800, webp1200: calendarWidget1200 }
+          },
         ]} />
 
         <div className="project-buttons-grid">
