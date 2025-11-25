@@ -1,18 +1,53 @@
 import React from 'react'
 import InfiniteListWithDetail from '../JS/InfiniteListWithDetail'
 
-// Optimized image import helper - reduces repetitive imports
-const importProjectImages = (projectName) => {
-  const basePath = '../assets/Project Overview/'
-  return {
-    avif400: new URL(`${basePath}${projectName}-400.avif`, import.meta.url).href,
-    avif800: new URL(`${basePath}${projectName}-800.avif`, import.meta.url).href,
-    avif1200: new URL(`${basePath}${projectName}-1200.avif`, import.meta.url).href,
-    webp400: new URL(`${basePath}${projectName}-400.webp`, import.meta.url).href,
-    webp800: new URL(`${basePath}${projectName}-800.webp`, import.meta.url).href,
-    webp1200: new URL(`${basePath}${projectName}-1200.webp`, import.meta.url).href,
-  }
-}
+// Linny images
+import Linny400avif from '../assets/Project Overview/Linny-400.avif'
+import Linny800avif from '../assets/Project Overview/Linny-800.avif'
+import Linny1200avif from '../assets/Project Overview/Linny-1200.avif'
+import Linny400webp from '../assets/Project Overview/Linny-400.webp'
+import Linny800webp from '../assets/Project Overview/Linny-800.webp'
+import Linny1200webp from '../assets/Project Overview/Linny-1200.webp'
+
+// SafeLink images
+import SafeLink400avif from '../assets/Project Overview/SafeLink-400.avif'
+import SafeLink800avif from '../assets/Project Overview/SafeLink-800.avif'
+import SafeLink1200avif from '../assets/Project Overview/SafeLink-1200.avif'
+import SafeLink400webp from '../assets/Project Overview/SafeLink-400.webp'
+import SafeLink800webp from '../assets/Project Overview/SafeLink-800.webp'
+import SafeLink1200webp from '../assets/Project Overview/SafeLink-1200.webp'
+
+// Room Reservation System images
+import RoomReservation400avif from '../assets/Project Overview/RoomReservationSystem-400.avif'
+import RoomReservation800avif from '../assets/Project Overview/RoomReservationSystem-800.avif'
+import RoomReservation1200avif from '../assets/Project Overview/RoomReservationSystem-1200.avif'
+import RoomReservation400webp from '../assets/Project Overview/RoomReservationSystem-400.webp'
+import RoomReservation800webp from '../assets/Project Overview/RoomReservationSystem-800.webp'
+import RoomReservation1200webp from '../assets/Project Overview/RoomReservationSystem-1200.webp'
+
+// MyPC images
+import MyPC400avif from '../assets/Project Overview/MyPC-400.avif'
+import MyPC800avif from '../assets/Project Overview/MyPC-800.avif'
+import MyPC1200avif from '../assets/Project Overview/MyPC-1200.avif'
+import MyPC400webp from '../assets/Project Overview/MyPC-400.webp'
+import MyPC800webp from '../assets/Project Overview/MyPC-800.webp'
+import MyPC1200webp from '../assets/Project Overview/MyPC-1200.webp'
+
+// WebToolz images
+import WebToolz400avif from '../assets/Project Overview/WebToolz-400.avif'
+import WebToolz800avif from '../assets/Project Overview/WebToolz-800.avif'
+import WebToolz1200avif from '../assets/Project Overview/WebToolz-1200.avif'
+import WebToolz400webp from '../assets/Project Overview/WebToolz-400.webp'
+import WebToolz800webp from '../assets/Project Overview/WebToolz-800.webp'
+import WebToolz1200webp from '../assets/Project Overview/WebToolz-1200.webp'
+
+// Calendar Widget images
+import CalendarWidget400avif from '../assets/Project Overview/CalendarWidget-400.avif'
+import CalendarWidget800avif from '../assets/Project Overview/CalendarWidget-800.avif'
+import CalendarWidget1200avif from '../assets/Project Overview/CalendarWidget-1200.avif'
+import CalendarWidget400webp from '../assets/Project Overview/CalendarWidget-400.webp'
+import CalendarWidget800webp from '../assets/Project Overview/CalendarWidget-800.webp'
+import CalendarWidget1200webp from '../assets/Project Overview/CalendarWidget-1200.webp'
 
 function smoothScrollToId(id, duration = 600) {
   const el = document.getElementById(id.replace('#', ''))
@@ -52,24 +87,24 @@ function ProjectsSection() {
   const projects = [
     {
       title: 'L.I.N.N.Y',
-      description: 'Inspired by J.A.R.V.I.S., L.I.N.N.Y. (Loyal Intelligent Neural Network for You) is a personal AI assistant that provides real-time verbal responses and manages daily tasks such as checking the time, weather updates, and schedule management with efficiency and precision.',
-      tags: ['Python', 'Gemini 2.0 Flash API', 'Grok API', 'Perplexity API'],
+      description: 'Inspired by J.A.R.V.I.S., L.I.N.N.Y. (Loyal Intelligent Neural Network for You) is a personal AI assistant that provides real-time verbal responses, manages daily tasks like checking the time, weather, and schedule, and seamlessly connects to Tapo smart devices via Kasa for efficient home automation.',
+      tags: ['Python', 'Generative AI', 'IoT Automation', 'Voice Control'],
       repoUrl: 'https://github.com/kidlatpogi/L.I.N.N.Y',
-      images: importProjectImages('Linny')
+      images: { avif400: Linny400avif, avif800: Linny800avif, avif1200: Linny1200avif, webp400: Linny400webp, webp800: Linny800webp, webp1200: Linny1200webp }
     },
     {
       title: 'SafeLink Mobile',
       description: 'SafeLink is a React Native/Expo app for family safety with emergency broadcasts and evacuation info using Firebase and OpenStreetMap.',
       tags: ['React Native', 'JavaScript', 'Firebase', 'Mobile'],
       repoUrl: 'https://github.com/kidlatpogi/SafeLink',
-      images: importProjectImages('SafeLink')
+      images: { avif400: SafeLink400avif, avif800: SafeLink800avif, avif1200: SafeLink1200avif, webp400: SafeLink400webp, webp800: SafeLink800webp, webp1200: SafeLink1200webp }
     },
     {
       title: 'Room Reservation System',
       description: 'A web-based system for classroom and laboratory reservations with admin controls and real-time updates.',
       tags: ['HTML5', 'CSS3', 'JavaScript', 'SQL'],
       repoUrl: 'https://github.com/kidlatpogi/Room-Reservation-System',
-      images: importProjectImages('RoomReservationSystem')
+      images: { avif400: RoomReservation400avif, avif800: RoomReservation800avif, avif1200: RoomReservation1200avif, webp400: RoomReservation400webp, webp800: RoomReservation800webp, webp1200: RoomReservation1200webp }
     },
     {
       title: 'MyPC E-Commerce Shop',
@@ -77,7 +112,7 @@ function ProjectsSection() {
       tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'XAMPP', 'MySQL'],
       repoUrl: 'https://github.com/kidlatpogi/InfoSec-MyPC.git',
       visitUrl: 'https://mypcinfosec.vercel.app',
-      images: importProjectImages('MyPC')
+      images: { avif400: MyPC400avif, avif800: MyPC800avif, avif1200: MyPC1200avif, webp400: MyPC400webp, webp800: MyPC800webp, webp1200: MyPC1200webp }
     },
     {
       title: 'Web Tools',
@@ -85,7 +120,7 @@ function ProjectsSection() {
       tags: ['React JS', 'JavaScript', 'CSS3', 'HTML5'],
       repoUrl: 'https://github.com/kidlatpogi/Web-tools.git',
       visitUrl: 'https://wtoolz.vercel.app/',
-      images: importProjectImages('WebToolz')
+      images: { avif400: WebToolz400avif, avif800: WebToolz800avif, avif1200: WebToolz1200avif, webp400: WebToolz400webp, webp800: WebToolz800webp, webp1200: WebToolz1200webp }
     },
     {
       title: 'Calendar Widget',
@@ -93,7 +128,7 @@ function ProjectsSection() {
       tags: ['HTML5', 'CSS3', 'JavaScript', 'Electron'],
       repoUrl: 'https://github.com/kidlatpogi/Calendar-Widget',
       downloadUrl: 'https://github.com/kidlatpogi/Calendar-Widget/releases/latest',
-      images: importProjectImages('CalendarWidget')
+      images: { avif400: CalendarWidget400avif, avif800: CalendarWidget800avif, avif1200: CalendarWidget1200avif, webp400: CalendarWidget400webp, webp800: CalendarWidget800webp, webp1200: CalendarWidget1200webp }
     },
   ]
 
