@@ -8,7 +8,8 @@ const imagesDir = path.join(repoRoot, 'src', 'assets', 'Project Overview');
 
 const sources = [
   'MyPC.png',
-  'WebToolz.png'
+  'WebToolz.png',
+  'Linny.png'
 ];
 
 const sizes = [400, 800, 1200];
