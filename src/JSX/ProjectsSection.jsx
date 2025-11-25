@@ -52,8 +52,8 @@ function ProjectsSection() {
   const projects = [
     {
       title: 'L.I.N.N.Y',
-      description: 'Inspired by J.A.R.V.I.S., L.I.N.N.Y. (Loyal Intelligent Neural Network for You) is a personal AI assistant that provides real-time verbal responses and manages daily tasks such as checking the time, weather updates, and schedule management with efficiency and precision.',
-      tags: ['Python', 'Gemini 2.0 Flash API', 'Grok API', 'Perplexity API'],
+      description: 'Inspired by J.A.R.V.I.S., L.I.N.N.Y. (Loyal Intelligent Neural Network for You) is a personal AI assistant that provides real-time verbal responses, manages daily tasks like checking the time, weather, and schedule, and seamlessly connects to Tapo smart devices via Kasa for efficient home automation.',
+      tags: ['Python', 'Generative AI', 'IoT Automation', 'Voice Control'],
       repoUrl: 'https://github.com/kidlatpogi/L.I.N.N.Y',
       images: importProjectImages('Linny')
     },
