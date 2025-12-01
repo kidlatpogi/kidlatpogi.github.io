@@ -1876,23 +1876,72 @@ body.light-mode .skill-icon {
 
 .Certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .Certifications-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 200px;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  padding: 1.5rem;
+  min-height: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px) saturate(125%);
+  -webkit-backdrop-filter: blur(10px) saturate(125%);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+  padding: 1.75rem;
+  border-left: 3px solid rgba(110, 193, 228, 0.3);
+}
+
+.Certifications-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110, 193, 228, 0.12) 0%, transparent 70%);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.Certifications-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(110, 193, 228, 0) 0%, rgba(110, 193, 228, 0.6) 50%, rgba(110, 193, 228, 0) 100%);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Certifications-card:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-color: rgba(110, 193, 228, 0.25);
+  border-left-color: rgba(110, 193, 228, 0.5);
+  box-shadow: 0 12px 48px rgba(110, 193, 228, 0.1), 0 0 20px rgba(110, 193, 228, 0.05);
+  transform: translateY(-4px);
+}
+
+.Certifications-card:hover::before {
+  opacity: 1;
+  top: -25%;
+  right: -25%;
+}
+
+.Certifications-card:hover::after {
+  width: 100%;
 }
 
 .Certifications-card-photo {
@@ -1918,43 +1967,49 @@ body.light-mode .skill-icon {
 
 .Certifications-card .card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
 .Certifications-card h3 {
   margin: 0;
-  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
-  font-weight: 800;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  font-weight: 700;
   color: var(--light-mode);
-  line-height: 1.3;
+  line-height: 1.4;
+  flex: 1;
+  word-break: break-word;
 }
 
 .cert-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(69, 160, 73, 0.1)),
-    radial-gradient(circle at top right, rgba(76, 175, 80, 0.2), transparent 60%);
-  color: #4caf50;
-  border: 1px solid rgba(76, 175, 80, 0.3);
-  padding: 0.25rem 0.6rem;
+  background: linear-gradient(135deg, rgba(110, 193, 228, 0.15), rgba(100, 181, 246, 0.1)),
+    radial-gradient(circle at top right, rgba(110, 193, 228, 0.2), transparent 60%);
+  color: #64b5f6;
+  border: 1px solid rgba(110, 193, 228, 0.4);
+  padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: inset 0 1px 0 rgba(76, 175, 80, 0.1);
+  box-shadow: inset 0 1px 0 rgba(110, 193, 228, 0.2), 0 0 12px rgba(110, 193, 228, 0.15);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .cert-badge:hover {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.25), rgba(69, 160, 73, 0.15)),
-    radial-gradient(circle at top right, rgba(76, 175, 80, 0.3), transparent 60%);
-  border-color: rgba(76, 175, 80, 0.45);
-  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.3),
-    inset 0 1px 0 rgba(76, 175, 80, 0.2);
-  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(110, 193, 228, 0.25), rgba(100, 181, 246, 0.15)),
+    radial-gradient(circle at top right, rgba(110, 193, 228, 0.35), transparent 60%);
+  border-color: rgba(110, 193, 228, 0.6);
+  box-shadow: 0 6px 20px rgba(110, 193, 228, 0.4), inset 0 1px 0 rgba(110, 193, 228, 0.3);
+  transform: scale(1.08);
   opacity: 1;
 }
 
@@ -1966,73 +2021,143 @@ body.light-mode .skill-icon {
 .cert-issuer,
 .cert-year {
   margin: 0;
-  opacity: 0.9;
-  font-size: 0.95rem;
-  margin-top: 1rem;
+  padding: 0;
+  color: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.cert-issuer {
+  font-weight: 600;
+  opacity: 0.85;
 }
 
 .cert-year {
-  margin-bottom: 1rem;
+  opacity: 0.72;
+}
+
+.cert-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1.25rem 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.cert-divider {
+  opacity: 0.5;
+  color: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
 }
 
 .cert-link a,
 .view-cert-btn {
   color: inherit;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.02);
-  padding: 0.35rem 0.6rem;
+  background: rgba(110, 193, 228, 0.08);
+  padding: 0.65rem 1rem;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  display: inline-block;
-  transition: border-color 220ms, box-shadow 220ms, transform 180ms, background 220ms;
+  border: 1.5px solid rgba(110, 193, 228, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.cert-link a::before,
+.view-cert-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(110, 193, 228, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 .cert-link a:hover,
 .view-cert-btn:hover {
-  background: rgba(110, 193, 228, 0.1);
-  border-color: rgba(110, 193, 228, 0.3);
-  box-shadow: 0 2px 12px rgba(110, 193, 228, 0.2), 0 0 0 2px rgba(110, 193, 228, 0.15);
+  background: rgba(110, 193, 228, 0.15);
+  border-color: rgba(110, 193, 228, 0.5);
+  box-shadow: 0 4px 16px rgba(110, 193, 228, 0.25), inset 0 0 10px rgba(110, 193, 228, 0.1);
   transform: translateY(-2px);
+}
+
+.cert-link a:hover::before,
+.view-cert-btn:hover::before {
+  left: 100%;
 }
 
 /* Light mode adjustments for badge and link */
 body.light-mode .cert-badge {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(69, 160, 73, 0.12)),
-    radial-gradient(circle at top right, rgba(76, 175, 80, 0.25), transparent 60%);
-  color: #2e7d32;
-  border: 1px solid rgba(76, 175, 80, 0.35);
-  box-shadow: inset 0 1px 0 rgba(76, 175, 80, 0.15);
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.14), rgba(255, 179, 0, 0.1));
+  color: #d4a80e;
+  border: 1.5px solid rgba(255, 193, 7, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 193, 7, 0.15), 0 0 12px rgba(255, 193, 7, 0.1);
+  font-weight: 800;
 }
 
 body.light-mode .cert-badge:hover {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(69, 160, 73, 0.18)),
-    radial-gradient(circle at top right, rgba(76, 175, 80, 0.35), transparent 60%);
-  border-color: rgba(76, 175, 80, 0.5);
-  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.35),
-    inset 0 1px 0 rgba(76, 175, 80, 0.2);
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.22), rgba(255, 179, 0, 0.16));
+  border-color: rgba(255, 193, 7, 0.55);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.25), inset 0 1px 0 rgba(255, 193, 7, 0.25);
+  transform: scale(1.08);
 }
 
 body.light-mode .cert-link a,
 body.light-mode .view-cert-btn {
-  background: rgba(0, 0, 0, 0.06);
-  color: #111;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.12), rgba(255, 179, 0, 0.08));
+  color: #d4a80e;
+  border: 1.5px solid rgba(255, 193, 7, 0.3);
+  font-weight: 600;
 }
 
 body.light-mode .cert-link a:hover,
 body.light-mode .view-cert-btn:hover {
-  background: rgba(255, 193, 7, 0.1);
-  border-color: rgba(255, 193, 7, 0.4);
-  box-shadow: 0 2px 12px rgba(255, 193, 7, 0.2), 0 0 0 2px rgba(255, 193, 7, 0.15);
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 179, 0, 0.14));
+  border-color: rgba(255, 193, 7, 0.55);
+  box-shadow: 0 6px 18px rgba(255, 193, 7, 0.22), inset 0 0 10px rgba(255, 193, 7, 0.12);
+}
+
+body.light-mode .cert-link a::before,
+body.light-mode .view-cert-btn::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.2), transparent);
 }
 
 body.light-mode .Certifications-card {
-  background: rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.03), rgba(255, 179, 0, 0.015));
+  border: 1.5px solid rgba(255, 193, 7, 0.12);
+  border-left-color: rgba(255, 193, 7, 0.3);
+  box-shadow: 0 8px 32px rgba(255, 193, 7, 0.06), inset 0 1px 0 rgba(255, 193, 7, 0.04);
+}
+
+body.light-mode .Certifications-card:hover {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.06), rgba(255, 179, 0, 0.03));
+  border-color: rgba(255, 193, 7, 0.2);
+  border-left-color: rgba(255, 193, 7, 0.45);
+  box-shadow: 0 12px 40px rgba(255, 193, 7, 0.15), 0 0 16px rgba(255, 193, 7, 0.08), inset 0 1px 0 rgba(255, 193, 7, 0.06);
+}
+
+body.light-mode .Certifications-card::before {
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.08) 0%, transparent 70%);
+}
+
+body.light-mode .Certifications-card::after {
+  background: linear-gradient(90deg, rgba(255, 193, 7, 0) 0%, rgba(255, 193, 7, 0.4) 50%, rgba(255, 193, 7, 0) 100%);
 }
 
 .card-grid {
