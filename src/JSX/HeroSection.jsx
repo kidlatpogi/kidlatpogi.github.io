@@ -19,7 +19,7 @@ function HeroSection() {
         />
       </p>
       <p className="bio-text">
-        I'm Zeus Bautista, a focused 3rd-year I.T. student dedicated to full-cycle application development. I specialize in building user-friendly web experiences and managing efficient data structures. This is supported by my Database Management certification and practical experience in preparing data for seamless system integration.
+        Third-year I.T. student with a strong foundation in web development and database management. Highly adaptable and eager to master new technologies, seeking to leverage technical problem-solving skills in a professional, collaborative environment.
         <span className="typing-cursor"></span>
       </p>
 

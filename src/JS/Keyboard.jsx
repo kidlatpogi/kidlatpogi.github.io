@@ -15,7 +15,7 @@ const keycapData = [
     { id: 'eight', name: 'Git', icon: 'git', keycap: 'eight.png', layer: 2 },
     { id: 'nine', name: 'GitHub', icon: 'github', keycap: 'nine.png', layer: 2 },
     { id: 'ten', name: 'VsCode', icon: 'visualstudiocode', keycap: 'ten.png', layer: 2 },
-    { id: 'eleven', name: 'Godot', icon: 'godotengine', keycap: 'eleven.png', layer: 3 },
+    { id: 'eleven', name: 'Electron', icon: 'electron', keycap: 'eleven.png', layer: 3 },
     { id: 'twelve', name: 'Photoshop', icon: 'adobephotoshop', keycap: 'twelve.png', layer: 3 },
     { id: 'thirteen', name: 'Canva', icon: 'canva', keycap: 'thirteen.png', layer: 3 },
     { id: 'fourteen', name: 'Figma', icon: 'figma', keycap: 'fourteen.png', layer: 3 },

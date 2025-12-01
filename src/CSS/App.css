@@ -85,6 +85,10 @@ body {
   font-family: 'Poppins', sans-serif;
 
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Hide native scrollbars on desktop while preserving scroll functionality for users

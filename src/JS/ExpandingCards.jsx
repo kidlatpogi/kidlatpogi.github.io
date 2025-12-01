@@ -97,70 +97,12 @@ const CARDS_DATA = [
 
 function ExpandingCards() {
   const [activeCard, setActiveCard] = useState(0)
-  const [userLiked, setUserLiked] = useState({})
   const [modalImage, setModalImage] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-
-  // Load user's reactions state from localStorage on mount
-  useEffect(() => {
-    const savedUserReactions = localStorage.getItem('portfolioUserReactions')
-    if (savedUserReactions) {
-      try {
-        setUserLiked(JSON.parse(savedUserReactions))
-      } catch (e) {
-        console.error('Error parsing reactions state:', e)
-      }
-    }
-  }, [])
 
   const handleCardClick = useCallback((index) => {
     setActiveCard(index)
   }, [])
-
-  const handleLike = useCallback(async (e, cardId) => {
-    e.stopPropagation()
-    const key = String(cardId)
-
-    // Use functional state update to avoid stale closures and make updates atomic
-    setUserLiked((prev) => {
-      const wasLiked = !!prev[key]
-      const next = { ...prev, [key]: !wasLiked }
-      try {
-        localStorage.setItem('portfolioUserReactions', JSON.stringify(next))
-      } catch (err) {
-        console.warn('Failed to persist reactions state to localStorage:', err)
-      }
-      return next
-    })
-
-    // Persist a local-only reactions count object so counts survive reloads for this browser
-    try {
-      const countsKey = 'portfolioReactionsCounts'
-      const raw = localStorage.getItem(countsKey)
-      const counts = raw ? JSON.parse(raw) : {}
-      const currentCount = counts[key] || 0
-
-      // Determine new count based on previous state snapshot — safe because we already updated storage above
-      const wasLiked = !!userLiked[key]
-      const newCount = wasLiked ? Math.max(0, currentCount - 1) : currentCount + 1
-      counts[key] = newCount
-      localStorage.setItem(countsKey, JSON.stringify(counts))
-
-      // If this is a new reaction (wasn't liked), notify serverless endpoint (Vercel KV)
-      if (!wasLiked) {
-        try {
-          const resp = await fetch(`/api/reactions?id=${encodeURIComponent(key)}`, { method: 'POST' })
-          if (!resp.ok) {
-            console.warn('Server reaction endpoint responded with error:', resp.status)
-          }
-        } catch (e) {
-          console.warn('Failed to report reaction to server (possibly blocked):', e)
-        }
-      }
-    } catch (err) {
-      console.warn('Failed to persist local reactions count:', err)
-    }
-  }, [userLiked])
 
   const handleOpenModal = useCallback((e, card) => {
     e.stopPropagation()
@@ -183,9 +125,7 @@ function ExpandingCards() {
             card={card}
             index={index}
             isActive={activeCard === index}
-            userLiked={userLiked}
             onCardClick={handleCardClick}
-            onLike={handleLike}
             onViewFull={handleOpenModal}
           />
         ))}
@@ -195,8 +135,6 @@ function ExpandingCards() {
         isOpen={isModalOpen}
         modalImage={modalImage}
         onClose={handleCloseModal}
-        userLiked={userLiked}
-        onReact={handleLike}
       />
     </>
   )
